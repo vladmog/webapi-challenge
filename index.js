@@ -82,7 +82,23 @@ server.delete('/', (req, res) => {
     res.status(200).json(chores);
 })
 
-//Person endpoints
+
+//QUERY STRING
+
+server.get('/query', (req, res) => {
+    if(req.query.completed){
+        let choreQuery = req.query.completed;
+        choreQuery = JSON.parse(choreQuery)
+        let response = chores.filter(chore => {
+            return JSON.parse(chore.completed) === choreQuery
+        })
+        res.status(200).json(response)
+    } else {
+        res.status(200).json(chores)
+    }
+})
+
+
 
 //GET chores by person_id
 
