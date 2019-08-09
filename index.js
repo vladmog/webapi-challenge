@@ -120,6 +120,6 @@ server.get('/:id', (req, res) => {
     }
 })
 
-
-server.listen(8000, () => console.log('API running on port 8000'));
+let port = process.env.PORT || 8000;
+server.listen(port, () => console.log(`API running on port ${port}`));
 
