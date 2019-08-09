@@ -82,6 +82,28 @@ server.delete('/', (req, res) => {
     res.status(200).json(chores);
 })
 
+//Person endpoints
+
+//GET chores by person_id
+
+server.get('/:id', (req, res) => {
+    let person_id = parseFloat(req.params.id);
+    let amountOfPeopleWithId = people.filter(person => {
+        return person_id === parseFloat(person.id)
+    }).length;
+    if (amountOfPeopleWithId === 0){
+        res.status(404).json({ message: "Person with ID doesn't exist"});
+    } else {
+        let personChores = [];
+        chores.forEach(chore => {
+            if(parseFloat(chore.assignedTo) === person_id){
+                personChores.push(chore)
+            }
+        })
+        res.status(200).json(personChores);
+    }
+})
+
 
 server.listen(8000, () => console.log('API running on port 8000'));
 
