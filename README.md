@@ -40,22 +40,32 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+  Routes. Modules.
+
 - [ ] What is Express Middleware?
+
+  Middleware is a function that runs between the receipt of an endpoint request and the execution of the endpoint code. Can cancel the request, pass on to other middleware/code, or return a response.
 
 - [ ] How can a client send data to an API?
 
+  Client can send data to an API via query string params, req.body, and route parameters
+
 - [ ] What can the API return to help clients know if a request was successful?
+
+  Status codes. JSON objects.
 
 - [ ] What Express feature can we use to partition an application into sub-applications?
 
+  Routes.
+
 ## Minimum Viable Product
 
-- [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
-- [ ] Configure an _npm script_ named _"start"_ that will execute your code using _node_.
-- [ ] Write endpoints to manage (CRUD) **chores**.
-- [ ] Hard code an array with a few **people**. No need to write endpoints to manage them.
-- [ ] Write an endpoint that accepts a person's `id` and returns the list of **chores** for the person. if a person with that `id` does not exist in the **people** array, the endpoint should return a `404` status code and a message. If the person exists, but has no **chores** assigned, return an empty array.
-- [ ] Add support for a `query string parameter` called _completed_ to the endpoint that returns the list of chores. When the client sends this query string parameter, and the value is `true`, the endpoint should return the list of completed chores. If the value of the query string parameter is `false`, the endpoint should return chores where completed is `false`. If the query string parameter is not sent, the endpoint should return all chores.
+- [x] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
+- [x] Configure an _npm script_ named _"start"_ that will execute your code using _node_.
+- [x] Write endpoints to manage (CRUD) **chores**.
+- [x] Hard code an array with a few **people**. No need to write endpoints to manage them.
+- [x] Write an endpoint that accepts a person's `id` and returns the list of **chores** for the person. if a person with that `id` does not exist in the **people** array, the endpoint should return a `404` status code and a message. If the person exists, but has no **chores** assigned, return an empty array.
+- [x] Add support for a `query string parameter` called _completed_ to the endpoint that returns the list of chores. When the client sends this query string parameter, and the value is `true`, the endpoint should return the list of completed chores. If the value of the query string parameter is `false`, the endpoint should return chores where completed is `false`. If the query string parameter is not sent, the endpoint should return all chores.
 - [ ] Deploy the API to _heroku_ and send the URL to your TL.
 
 ### Resources (People and Chores)
